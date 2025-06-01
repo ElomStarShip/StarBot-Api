@@ -1,17 +1,20 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 require("dotenv").config();
 const { Configuration, OpenAIApi } = require("openai");
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+// 🟢 WICHTIG: CORS aktivieren
+app.use(cors());
+app.use(bodyParser.json());
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
-
-app.use(bodyParser.json());
 
 app.post("/starbot", async (req, res) => {
   const { message } = req.body;
