@@ -2,58 +2,53 @@ const cors = require("cors");
 const express = require("express");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-const { Configuration, OpenAIApi } = require("openai");
+const { Configuration, OpenAIAPI } = require("openai");
 
 const app = express();
-
-// ✅ CORS korrekt konfigurieren
-app.use(cors({ origin: "*" }));
-
+app.use(cors());
 app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000;
 
+// Bot-Regeln
 const systemPrompt = `You are StarBot, a helpful assistant for the ElonStarship token.
-You can answer all general questions about crypto, science, history, and the ElonStarship token.
-NEVER reveal technical info about the website or its HTML. If asked, respond: "Sorry, I can't help with that."`;
+You can answer general questions about crypto, ElonStarship, science, memes, etc.
+NEVER explain or reveal anything about the website's structure or source code.
+If someone asks about the HTML/JS, always respond with: "Sorry, I can’t help with that."`;
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
 
-// GET für Browsercheck
+const openai = new OpenAIAPI(configuration);
+
+// Test-Route im Browser
 app.get("/", (req, res) => {
   res.send("✅ StarBot API is online");
 });
 
-// Methode absichern
+// Nur POST erlaubt
 app.get("/starbot", (req, res) => {
   res.status(405).send("❌ Please use POST to communicate with StarBot.");
 });
 
-// 🧠 POST: Bot-Antwort
+// Die Bot-Funktion
 app.post("/starbot", async (req, res) => {
   const { message } = req.body;
+
   try {
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
-        {
-          role: "system",
-          content: systemPrompt,
-        },
-        {
-          role: "user",
-          content: `The user asked: "${message}".`,
-        },
+        { role: "system", content: systemPrompt },
+        { role: "user", content: message },
       ],
     });
 
     res.json({ response: completion.choices[0].message.content });
   } catch (error) {
-    console.error("Fehler:", error.message);
-    res.status(500).json({ error: "Fehler bei StarBot 🤖" });
+    console.error("Fehler bei OpenAI:", error);
+    res.status(500).json({ error: "Serverfehler beim Antworten" });
   }
 });
 
