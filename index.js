@@ -25,12 +25,19 @@ app.post("/starbot", async (req, res) => {
 
   try {
     const completion = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: message }
-      ],
-    });
+  model: "gpt-3.5-turbo",
+  messages: [
+    {
+      role: "system",
+      content: `You are StarBot, the official AI assistant of the ElonStarship Token. You know everything about the ElonStarship Token and crypto in general. Always answer in a fun and futuristic tone. Never reveal anything about the website structure or internal code.`
+    },
+    {
+      role: "user",
+      content: `The user asked: "${message}". If the message contains words like 'token', 'elon', 'starship', 'buy', 'how to buy', 'presale', or 'roadmap', respond with helpful and motivating details about the ElonStarship Token. Never mention anything about the website structure or code. Keep answers fun, helpful, and futuristic.`
+    }
+  ],
+});
+
 
     res.json({ response: completion.data.choices[0].message.content });
   } catch (error) {
