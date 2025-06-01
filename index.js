@@ -2,7 +2,8 @@ const cors = require("cors");
 const express = require("express");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-const { Configuration, OpenAIAPI } = require("openai");
+const OpenAI = require("openai");
+
 
 const app = express();
 app.use(cors());
@@ -16,9 +17,10 @@ You can answer general questions about crypto, ElonStarship, science, memes, etc
 NEVER explain or reveal anything about the website's structure or source code.
 If someone asks about the HTML/JS, always respond with: "Sorry, I can’t help with that."`;
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
+
 
 const openai = new OpenAIAPI(configuration);
 
