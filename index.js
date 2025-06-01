@@ -9,7 +9,6 @@ const port = process.env.PORT || 3000;
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
 const openai = new OpenAIApi(configuration);
 
 app.use(bodyParser.json());
@@ -33,4 +32,5 @@ app.post("/starbot", async (req, res) => {
 app.listen(port, () => {
   console.log(`🚀 StarBot läuft auf http://localhost:${port}`);
 });
+
 
