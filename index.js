@@ -42,25 +42,26 @@ app.post("/starbot", async (req, res) => {
   const { message } = req.body;
 
   try {
-    const completion = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [
-        {
-          role: "system",
-          content: systemPrompt,
-        },
-        {
-          role: "user",
-          content: `The user asked: "${message}". If the message contains words like "token", "elon", etc., respond as StarBot.`,
-        },
-      ],
-    });
+  const completion = await openai.chat.completions.create({
+    model: "gpt-3.5-turbo",
+    messages: [
+      {
+        role: "system",
+        content: systemPrompt,
+      },
+      {
+        role: "user",
+        content: `The user asked: "${message}".`,
+      },
+    ],
+  });
 
-    res.json({ response: completion.data.choices[0].message.content });
-  } catch (error) {
-    console.error("Fehler:", error.message);
-    res.status(500).json({ error: "Fehler bei StarBot" });
-  }
+  res.json({ response: completion.choices[0].message.content });
+} catch (error) {
+  console.error("Fehler:", error.message);
+  res.status(500).json({ error: "Fehler bei StarBot 🤖" });
+}
+
 });
 
 
