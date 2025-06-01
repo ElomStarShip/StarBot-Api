@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-const { Configuration, OpenAIApi } = require("openai"); // ✅ korrekt
+const { Configuration, OpenAIApi } = require("openai"); // ✅ das hier!
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration); // ✅ nur einmal
+const openai = new OpenAIApi(configuration); // ✅ korrekt!
 
 app.use(bodyParser.json());
 
