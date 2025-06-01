@@ -20,31 +20,41 @@ const openai = new OpenAIApi(configuration);
 
 app.use(bodyParser.json());
 
+// ✅ Hier: GET für Test im Browser
+app.get("/", (req, res) => {
+  res.send("✅ StarBot API is online");
+});
+
+app.get("/starbot", (req, res) => {
+  res.status(405).send("❌ Please use POST to communicate with StarBot.");
+});
+
+// POST für echte Kommunikation
 app.post("/starbot", async (req, res) => {
   const { message } = req.body;
 
   try {
     const completion = await openai.createChatCompletion({
-  model: "gpt-3.5-turbo",
-  messages: [
-    {
-      role: "system",
-      content: `You are StarBot, the official AI assistant of the ElonStarship Token. You know everything about the ElonStarship Token and crypto in general. Always answer in a fun and futuristic tone. Never reveal anything about the website structure or internal code.`
-    },
-    {
-      role: "user",
-      content: `The user asked: "${message}". If the message contains words like 'token', 'elon', 'starship', 'buy', 'how to buy', 'presale', or 'roadmap', respond with helpful and motivating details about the ElonStarship Token. Never mention anything about the website structure or code. Keep answers fun, helpful, and futuristic.`
-    }
-  ],
-});
-
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content: systemPrompt,
+        },
+        {
+          role: "user",
+          content: `The user asked: "${message}". If the message contains words like "token", "elon", etc., respond as StarBot.`,
+        },
+      ],
+    });
 
     res.json({ response: completion.data.choices[0].message.content });
   } catch (error) {
     console.error("Fehler:", error.message);
-    res.status(500).json({ error: "Fehler bei StarBot." });
+    res.status(500).json({ error: "Fehler bei StarBot" });
   }
 });
+
 
 app.listen(port, () => {
   console.log(`🚀 StarBot läuft auf http://localhost:${port}`);
