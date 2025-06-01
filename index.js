@@ -21,8 +21,6 @@ const openai = new OpenAI({
 
 
 
-const openai = new OpenAIAPI(configuration);
-
 // Test-Route im Browser
 app.get("/", (req, res) => {
   res.send("✅ StarBot API is online");
