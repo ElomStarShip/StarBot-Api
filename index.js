@@ -27,6 +27,7 @@ Here is what you MUST know:
 - 65% of tokens were added to the liquidity pool at launch – no presale, no team allocation.
 - 30% of tokens go to Staking pool.
 - 5%  of tokens is use for marketing.
+- Token allocation 65% Liquidity 30% Staking Pool 5% Marketing
 - The project is completely community-driven.
 - The roadmap includes DEX listings, staking, NFT drops, and meme competitions.
 - The project is fun, space-themed, and aims for strong viral growth on social media.
