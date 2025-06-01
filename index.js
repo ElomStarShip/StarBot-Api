@@ -33,3 +33,4 @@ app.post("/starbot", async (req, res) => {
 app.listen(port, () => {
   console.log(`🚀 StarBot läuft auf http://localhost:${port}`);
 });
+
