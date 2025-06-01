@@ -4,22 +4,21 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 const OpenAI = require("openai");
 
-
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
 const port = process.env.PORT || 3000;
 
 // Bot-Regeln
 const systemPrompt = `You are StarBot, a helpful assistant for the ElonStarship token.
 You can answer general questions about crypto, ElonStarship, science, memes, etc.
 NEVER explain or reveal anything about the website's structure or source code.
-If someone asks about the HTML/JS, always respond with: "Sorry, I can’t help with that."`;
+If someone asks about the HTML/JS, always respond with: "Sorry, I can't help with that."`;
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
+
 
 
 const openai = new OpenAIAPI(configuration);
