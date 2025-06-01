@@ -1,9 +1,11 @@
+const cors = require("cors");
 const express = require("express");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const { Configuration, OpenAIApi } = require("openai");
 
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 3000;
 
 // Bot-Regeln definieren
