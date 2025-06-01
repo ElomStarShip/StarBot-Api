@@ -5,8 +5,13 @@ require("dotenv").config();
 const OpenAI = require("openai");
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: "https://elomstarship.github.io",
+  methods: ["POST"],
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
+
 const port = process.env.PORT || 3000;
 
 // Bot-Regeln
