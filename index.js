@@ -5,7 +5,13 @@ require("dotenv").config();
 const { Configuration, OpenAIApi } = require("openai");
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: 'https://elonstarship.github.io',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+};
+app.use(cors(corsOptions));
+
 const port = process.env.PORT || 3000;
 
 // Bot-Regeln definieren
