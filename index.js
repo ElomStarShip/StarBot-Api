@@ -30,7 +30,7 @@ Here is what you MUST know:
 
 - Token allocation 100% Liquidity. 
 - The project is completely community-driven.
-- The roadmap includes DEX listings, staking, NFT drops, and meme competitions.
+- The roadmap includes DEX listings.
 - The project is fun, space-themed, and aims for strong viral growth on social media.
 - ElonStarship has no taxes, no hidden fees, and no centralized control.
 - Roadmap
