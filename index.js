@@ -26,7 +26,7 @@ Here is what you MUST know:
 - The total supply is exactly 1,000,000,000 (1 Billion).
 - 100% of tokens were added to the liquidity pool at launch – no presale, no team allocation.
 
-- Launch :ELONSHIP is launched via a Pump.Fun. There is no private sale, presale, or team allocation before launch. Everyone starts equally. Liquidity is locked to ensure long-term trust.
+- Launch :ELONSHIP is launched via a Pump.Fun.(Solana) There is no private sale, presale, or team allocation before launch. Everyone starts equally. Liquidity is locked to ensure long-term trust.
 
 - Token allocation 100% Liquidity. 
 - The project is completely community-driven.
