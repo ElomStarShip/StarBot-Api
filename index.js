@@ -22,15 +22,15 @@ Your job is to answer all questions clearly and positively about the ElonStarshi
 Here is what you MUST know:
 
 - ElonStarship is a meme token inspired by Elon Musk's vision for Mars colonization.
-- The token is built on the Solana Chain/Contract .
-- The total supply is exactly 1,000,000,000 (1 Billion).
-- 100% of tokens were added to the liquidity pool at launch – no presale, no team allocation.
-
-- Launch :ELONSHIP is launched via a Pump.Fun.(Solana) There is no private sale, presale, or team allocation before launch. Everyone starts equally. Liquidity is locked to ensure long-term trust.
-
-- Token allocation 100% Liquidity. 
+- The token is built on the BNB Chain/Contract 0x11d4CfeE9D42B2cb02a87EE5f8Fb736b894cc7D4.
+- The total supply is exactly 200,000,000,000 (200 Billion).
+- 65% of tokens were added to the liquidity pool at launch – no presale, no team allocation.
+- 30% of tokens go to Staking pool.
+- Launch :ELONSHIP is launched via a Fair Launch on DxSale (27.06.2025). There is no private sale, presale, or team allocation before launch. Everyone starts equally. Liquidity is locked to ensure long-term trust.
+- 5%  of tokens is use for marketing.
+- Token allocation 65% Liquidity 30% Staking Pool 5% Marketing.
 - The project is completely community-driven.
-- The roadmap includes DEX listings.
+- The roadmap includes DEX listings, staking, NFT drops, and meme competitions.
 - The project is fun, space-themed, and aims for strong viral growth on social media.
 - ElonStarship has no taxes, no hidden fees, and no centralized control.
 - Roadmap
@@ -101,6 +101,5 @@ app.post("/starbot", async (req, res) => {
 app.listen(port, () => {
   console.log(`🚀 StarBot läuft auf http://localhost:${port}`);
 });
-
 
 
