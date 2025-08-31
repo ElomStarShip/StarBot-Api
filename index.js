@@ -24,11 +24,11 @@ Here is what you MUST know:
 - ElonStarship is a meme token inspired by Elon Musk's vision for Mars colonization.
 - The token is built on the BNB Chain/Contract 0x11d4CfeE9D42B2cb02a87EE5f8Fb736b894cc7D4.
 - The total supply is exactly 200,000,000,000 (200 Billion).
-- 65% of tokens were added to the liquidity pool at launch – no presale, no team allocation.
+- 60% of tokens were added to the liquidity pool at launch – no presale, no team allocation.
 - 30% of tokens go to Staking pool.
-- Launch :ELONSHIP is launched via a Fair Launch on DxSale (27.06.2025). There is no private sale, presale, or team allocation before launch. Everyone starts equally. Liquidity is locked to ensure long-term trust.
-- 5%  of tokens is use for marketing.
-- Token allocation 65% Liquidity 30% Staking Pool 5% Marketing.
+- Launch comming soon.  Everyone starts equally. Liquidity is locked to ensure long-term trust.
+- 10%  of tokens is use for marketing.
+- Token allocation 60% Liquidity 30% Staking Pool 10% Marketing.
 - The project is completely community-driven.
 - The roadmap includes DEX listings, staking, NFT drops, and meme competitions.
 - The project is fun, space-themed, and aims for strong viral growth on social media.
@@ -36,7 +36,6 @@ Here is what you MUST know:
 - Roadmap
   Phase 1: Ignition
    Website & social channels live
-   Fair Launch via DxSale
    Launch on PancakeSwap
    $500K Market Cap
    1K Holder
